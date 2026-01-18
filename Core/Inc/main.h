@@ -86,6 +86,8 @@ void Error_Handler(void);
 #define M00765_SYNC_GPIO_Port GPIOD
 #define USB_OTG_FS_OVCR_Pin GPIO_PIN_7
 #define USB_OTG_FS_OVCR_GPIO_Port GPIOG
+#define SPI3_CS_Pin GPIO_PIN_11
+#define SPI3_CS_GPIO_Port GPIOC
 #define M00765_RESET_Pin GPIO_PIN_12
 #define M00765_RESET_GPIO_Port GPIOG
 #define M00765_OM3_Pin GPIO_PIN_14

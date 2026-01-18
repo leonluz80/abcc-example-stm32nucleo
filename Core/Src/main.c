@@ -22,7 +22,6 @@
 #include "dma.h"
 #include "i2c.h"
 #include "usart.h"
-#include "memorymap.h"
 #include "spi.h"
 #include "usb_otg.h"
 #include "gpio.h"
@@ -37,6 +36,8 @@
 #include "abcc.h"
 #include "abcc_hardware_abstraction_aux.h"
 #include "abcc_api.h"
+
+#include "app_io.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -173,6 +174,7 @@ int main(void)
   MX_SPI1_Init();
   MX_USART3_UART_Init();
   MX_USB_OTG_FS_PCD_Init();
+  MX_SPI3_Init();
   /* USER CODE BEGIN 2 */
   printf( "%c", 12 ); /* 12 = 'form feed' */
   printf( "HMS Industrial Networks\n" );
@@ -208,6 +210,8 @@ int main(void)
 
   lTickThen = HAL_GetTick();
   fAbccRestartButtonThen = ABCC_HAL_GetRestartButton();
+
+  IO_InitAll();
   /* USER CODE END 2 */
 
   /* Infinite loop */
